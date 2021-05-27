@@ -1,1 +1,1 @@
-# JavaScript-Music-Player
+# JavaScript Music Player
