@@ -58,7 +58,6 @@ body {
   width: 20px;
   position: absolute;
   left: 50%;
-  bottom: 50%;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid rgb(27, 27, 27);
@@ -79,6 +78,10 @@ body {
   justify-content: center;
 }
 
+i{
+    cursor: pointer;
+}
+
 .action-btn {
   background-color: rgba(0, 0, 0, 0);
   border: none;
@@ -87,6 +90,7 @@ body {
   margin: 0 20px;
   font-size: 20px;
   color: white;
+  z-index: 99;
 }
 
 .action-btn-bg {
@@ -96,8 +100,45 @@ body {
   padding: 10px;
   font-size: 30px;
   color: white;
+  z-index: 99;
 }
 
 .music-info{
-    
+    background-color: rgb(16, 44, 53);
+    border-radius: 15px 15px 0 0;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: calc(100% - 40px);
+    padding: 10px 10px 10px 150px;
+    opacity: 0;
+    transform: translateY(0%);
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+
+}
+
+.music-container.play .music-info{
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.music-info h4{
+    margin: 0;
+}
+
+.progress-container{
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 4px;
+    width: 100%;
+}
+
+.progress{
+    background: rgb(97, 185, 207);
+    border-radius: 5px;
+    height: 100%;
+    width: 10%;
+    transition: width 0.1s linear;
 }
