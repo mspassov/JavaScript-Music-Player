@@ -68,6 +68,24 @@ nextBtn.addEventListener('click', () =>{
     playSong();
 })
 
-audio.addEventListener('timeupdate', () => {
-    
+audio.addEventListener('timeupdate', (e) => {
+    const {duration, currentTime} = e.srcElement;
+    const progressPercent = (currentTime/duration) * 100;
+    progress.style.width = `${progressPercent}%`;
+})
+
+progressContainer.addEventListener('click', (e) =>{
+    const width = progressContainer.clientWidth;
+    const clickX = e.offsetX;
+    const duration = audio.duration;
+    audio.currentTime = (clickX / width) * duration;
+})
+
+audio.addEventListener('ended', () => {
+    songIndex++;
+    if(songIndex > songs.length - 1){
+        songIndex = 0;
+    }
+    loadSong(songs[songIndex]);
+    playSong();
 })
