@@ -9,7 +9,7 @@
  const cover = document.querySelector('#cover');
 
  /* Song Title Array */
-const songs = ['EDM', 'Rock'];
+const songs = ['EDM', 'Rock', 'Pop', 'Hiphop', 'Dubstep', 'Tropical House', 'Country'];
 
 //Keep track of songs
 let songIndex = 0;
